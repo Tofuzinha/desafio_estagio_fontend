@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"> </script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <title>Cadastros</title>
+</head>
+
+<body onload="startDB();">
+    <header>
+        <div class="top">
+            <div class="titulo">
+                <h1>Nome da empresa</h1>
+               
+            </div>
+
+            <div class="logo"><img src="img/logo.png" alt=""></div>
+            <div class="titulo-2"><p>Cadastre seu Curso</p></div>
+
+        </div>
+
+    </header>
+
+    <form action="" id="cadastrar">
+        <fieldset>
+            <div class="campo">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" placeholder="Digite nome do curso">
+            </div>
+            <div class="campo">
+                <label for="date">Data inicial:</label>
+                <input type="date" id="dataini" placeholder="xx/xx/xxxx">
+            </div>
+            <div class="campo">
+                <label for="date">Data final:</label>
+                <input type="date" id="datafin" placeholder="xx/xx/xxxx">
+            </div>
+            <div class="campo">
+                <label for="number">Duração:</label>
+                <input type="number" id="duracao" placeholder="Duração (semanas)">
+            </div>
+            <div class="campo">
+                <label for="mensagem">Descrição:</label>
+                <textarea rows="6" style="width: 31em" id="msg" name="mensagem"></textarea>
+            </div>
+
+            <input type="button" class="btn" id="save" name="cadastrar" onclick="add();" value="cadastrar">
+            <!--<input type="button" id="borrardb" name="borrardb" onclick="borrardb();" value="borrardb">-->
+
+        </fieldset>
+
+    </form>
+
+     
+    <div id="oculto"></div>
+
+    <div id="elements">
+        <table id="myTable">
+
+            <div class="pesquisa">
+                <input id="myInput" onkeyup="myFunction()" placeholder="Buscar cursos...">
+            </div>
+
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Data Inicio</td>
+                    <td>Data Término</td>
+                    
+                    <td>Duração</td>
+                    <td>Descrição</td>
+                </tr>
+            </thead>
+
+            <tbody id="elementsList">
+                <tr>
+                    <td colspan="5"></td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        </div>
+            <input type="button" class="btn-ordem" onclick="loadAllByName();" value="Ordenar por data">
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div class="container-footer">
+    
+            <p>Todos os direitos reservados</p>
+    
+            
+        </div>
+    
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    
+</body>
+
+
+
+</html>
